@@ -22,7 +22,7 @@
 		</h1>
 			<p class="italics" >User: <%= post.user.username %></p>
 			<p class="italics" >Created at: <%= post.created_at.asctime %></p>
-		<div class= "body">
+		<div class= "body block_overflow">
 			<%= post.body %>
 		</div>
 		<a href="/posts/<%=post.id%>/like">LIKE</a>

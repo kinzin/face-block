@@ -35,6 +35,12 @@ get '/users/sign_up' do
 	erb :sign_up
 end
 
+get '/posts' do
+  redirect '/'
+end
+
+
+
 post '/users' do 
 	user = User.create(:username => params[:username])
 	session[:username] = user.username
