@@ -1,0 +1,49 @@
+.container{
+	width: 600px;
+	margin: 0 auto;
+}
+
+.post {
+	background-color: lightblue;
+	border: 5px solid black;
+	border-radius: 1em;
+	margin-top: 1em;
+	padding: 1em;
+	-moz-box-shadow: -1px 3px 12px #000000;
+	-webkit-box-shadow: -1px 3px 12px #000000;
+	box-shadow: -1px 3px 12px #000000;
+}
+
+.post .body {
+	background-color: lightgrey;
+	border-radius: 1em;
+	boder: 1px solid magenta;
+}
+
+.post .comments {
+	background-color: lightpink;
+}
+
+
+.post .new_comment {
+	background-color: cyan;
+}
+
+/*
+.comments p{
+	transform: skew(-7deg, 1deg) ;
+	-webkit-transform: skew(-7deg, 1deg) ;
+	-moz-transform: skew(-7deg, 1deg) ;
+	-o-transform: skew(-7deg, 1deg) ;
+	-ms-transform: skew(-7deg, 1deg) ;
+}
+*/
+.italics {
+	font-style: italic;
+}
+
+.comments p:nth-child(even){
+	background-color: black;
+	color: white;
+}
+

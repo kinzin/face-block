@@ -1,0 +1,8 @@
+
+<h1 class="user"><%= @user.username %></h1>
+
+<ul>
+	<% @user.faves.each do |post| %>
+		<li><%=post.title %></li>
+	<% end %>
+</ul>

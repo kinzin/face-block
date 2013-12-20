@@ -1,0 +1,61 @@
+<% if @user %>
+	<h1>Welcome, <a href="/users/<%=@user.id%>"><%=@user.username%></a></h1>
+	<a href="/users/sign_out">sign out</a>
+<% else %> 
+	<a href="/users/sign_up">sign up</a>
+	<a href="/users/sign_in">sign in</a>
+<% end %>
+
+<% if @user %>
+<form action="/posts" method="post">
+	<input type="text" name="title">
+	<textarea name="body" cols="70" rows="10"></textarea>
+	<input type="submit">
+</form>
+<hr>
+<% end %>
+
+<% @posts.each do |post| %> 
+	<div class="post">
+		<h1>
+			<%= post.title %>
+		</h1>
+			<p class="italics" >User: <%= post.user.username %></p>
+			<p class="italics" >Created at: <%= post.created_at.asctime %></p>
+		<div class= "body">
+			<%= post.body %>
+		</div>
+		<a href="/posts/<%=post.id%>/like">LIKE</a>
+		<div class="comments">
+			<% post.comments.each do |comment| %> 
+				<p><%=comment.user.username%>: <%= comment.body %></p>
+			<% end %>
+		</div>
+
+		<% if @user %>
+			<div class= "new_comment">
+				<form action="/posts/<%=post.id%>/comments" method="post">
+					<textarea name="comment_text" id="" cols="79" rows="2"></textarea>
+					<input type="submit">
+				</form>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
