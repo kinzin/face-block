@@ -3,14 +3,19 @@ body {
 	/*background-color: grey;*/
   font-family: 'Average Sans', sans-serif;
 	/*font-size: 1.2em;*/
-
 }
 
-
-
-textarea {
+input[type="text"], textarea {
+	font-family: 'Average Sans', sans-serif;
+	font-size: 1.2em;
   /*background-color: #def2c1;*/
 }
+
+/*{
+  background-color: rgba(0,0,0,.25);
+  color: white;
+  font-family: 'Courier New';
+}*/
 
 
 
@@ -21,7 +26,7 @@ textarea {
 }
 
 .post {
-	border-color: #EEE;
+	border-color: #128DFF;
 	margin-top: 0em;
 	padding: 1em;
 	padding-left: 6%;
@@ -30,24 +35,30 @@ textarea {
 	box-shadow: -19px 28px 27px #FFF;*/
 }
 .post:nth-child(even){
-	background-color: #EEE;
-	margin-left: 30%;
-	padding-right: 35%;
+	background-color: #128DFF;
+	margin-left: 24%;
+	padding-right: 30%;
 	border-top-left-radius: 22em 3em;
 	border-bottom-left-radius: 22em 3em;
 }
 .post:nth-child(odd){
-	padding-left: 36%;
+	padding-left: 30%;
 	padding-right: 8%;
-	margin-right: 24%;
-	background-color: #128DFF;
+	margin-right: 22%;
+	background-color: #EEE;
 	border-top-right-radius: 22em 3em;
 	border-bottom-right-radius: 22em 3em;
 }
 
+#signin {
+	text-align: right;
+ 	float:right;
+}
+
 h1 {
-	font-family: 'Average Sans', sans-serif;
-	/*color: red;*/
+	/*font-family: 'Average Sans', sans-serif;*/
+	padding-top: 38px;
+	margin-top: -10px;
 }
 
 .post .body {
@@ -60,9 +71,17 @@ h1 {
 /*	background-color: rgba(0,0,0,.10);
 	border-color: grey;
 	padding: 1em;*/
-	font-family: 'Cardo', sans-serif;
+	/*font-family: 'Cardo', sans-serif;*/
 }
 
+#new_post{
+	text-align: center;
+	background-color: #128DFF;
+	width:800px;
+	margin: 0 auto;
+	border-bottom-left-radius: 22em 3em;
+	border-bottom-right-radius: 22em 3em;
+}
 
 .post .new_comment {
 	/*background-color: orange;*/

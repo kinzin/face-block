@@ -11,6 +11,14 @@
 </head>
 <body>
 	<div class="container">
+    <div id="signin">
+    <% if @user %>
+      <a href="/users/sign_out">sign out</a>
+    <% else %> 
+      <a href="/users/sign_up">sign up</a>
+      <a href="/users/sign_in">sign in</a>
+    <% end %>
+    </div>
 		<%= yield %>
 	</div>
 </body>

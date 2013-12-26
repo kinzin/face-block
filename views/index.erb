@@ -1,19 +1,21 @@
+<div id="new_post">
 <% if @user %>
 	<h1>Welcome, <a href="/users/<%=@user.id%>"><%=@user.username%></a></h1>
-	<a href="/users/sign_out">sign out</a>
 <% else %> 
-	<a href="/users/sign_up">sign up</a>
-	<a href="/users/sign_in">sign in</a>
+	<h1>Welcome, Guest</a></h1>
 <% end %>
 
 <% if @user %>
 <form action="/posts" method="post">
-	<input type="text" name="title">
-	<textarea name="body" cols="70" rows="10"></textarea>
+	<!-- <label for="title">Post Title: </label><br> -->
+	<input type="text" name="title" placeholder="Title" size="63"><br>
+	<!-- <label for="body">Post: </label><br> -->
+	<textarea name="body" placeholder="Post" cols="62" rows="5"></textarea><br>
 	<input type="submit">
 </form>
-<hr>
+<!-- <hr> -->
 <% end %>
+</div>
 
 <% @posts.each do |post| %> 
 	<div class="post">
@@ -37,7 +39,7 @@
 		<% if @user %>
 			<div class= "new_comment">
 				<form action="/posts/<%=post.id%>/comments" method="post">
-					<textarea name="comment_text" id="" cols="55" rows="2"></textarea>
+					<textarea name="comment_text" id="" cols="62" rows="2"></textarea>
 					<input type="submit">
 				</form>
 			</div>
