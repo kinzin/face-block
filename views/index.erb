@@ -18,7 +18,7 @@
 <% @posts.each do |post| %> 
 	<div class="post">
 		<h1>
-			<%= post.title %>
+			<%= post.title.upcase %>
 		</h1>
 			<p class="italics" >User: <%= post.user.username %></p>
 			<p class="italics" >Created at: <%= post.created_at.asctime %></p>
@@ -27,9 +27,11 @@
 		</div>
 		<a href="/posts/<%=post.id%>/like">LIKE</a>
 		<div class="comments">
+			<ul style="list-style-type: none;">
 			<% post.comments.each do |comment| %> 
-				<p><%=comment.user.username%>: <%= comment.body %></p>
+				<li><b><%=comment.user.username%>:</b> <%= comment.body %></li>
 			<% end %>
+			</ul>
 		</div>
 
 		<% if @user %>

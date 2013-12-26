@@ -17,7 +17,6 @@ get '/' do
 	end
 
 	@posts = Post.all
-
 	erb :index
 end
 
