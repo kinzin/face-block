@@ -62,6 +62,9 @@ input[type="submit"] {
 #signin {
 	text-align: right;
  	float:right;
+ /*	display: block;
+ 	margin: 0 auto;*/
+
 }
 
 h1 {
@@ -83,13 +86,15 @@ h1 {
 	/*font-family: 'Cardo', sans-serif;*/
 }
 
-#new_post{
+#top_header{
 	text-align: center;
 	background-color: #128DFF;
 	width:800px;
 	margin: 0 auto;
+	padding-bottom: 10px;
 	border-bottom-left-radius: 22em 3em;
 	border-bottom-right-radius: 22em 3em;
+
 }
 
 .post .new_comment {
@@ -119,7 +124,8 @@ h1 {
 	padding: 1em 0;*/
 }
 
-/*ul {
-	color: red;
-	list-style-type: none;
-}*/
+/*.top_header {
+	display: block;
+	margin: 0 auto;
+}
+*/
