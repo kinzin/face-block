@@ -98,21 +98,3 @@ get '/posts/:id/like' do
 
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

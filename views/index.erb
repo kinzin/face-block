@@ -7,9 +7,7 @@
 
 <% if @user %>
 <form action="/posts" method="post">
-	<!-- <label for="title">Post Title: </label><br> -->
 	<input type="text" name="title" placeholder="Title" size="63"><br>
-	<!-- <label for="body">Post: </label><br> -->
 	<textarea name="body" placeholder="Post" cols="62" rows="5"></textarea><br>
 	<input type="submit">
 </form>
@@ -39,7 +37,7 @@
 		<% if @user %>
 			<div class= "new_comment">
 				<form action="/posts/<%=post.id%>/comments" method="post">
-					<textarea name="comment_text" id="" cols="62" rows="2"></textarea>
+					<textarea name="comment_text" id="" rows="2"></textarea>
 					<input type="submit">
 				</form>
 			</div>

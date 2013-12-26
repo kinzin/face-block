@@ -1,8 +1,5 @@
 body {
-	/*background-image: url('/images/bg.jpg');*/
-	/*background-color: grey;*/
   font-family: 'Average Sans', sans-serif;
-	/*font-size: 1.2em;*/
 }
 
 input[type="text"], textarea {
@@ -11,13 +8,23 @@ input[type="text"], textarea {
   /*background-color: #def2c1;*/
 }
 
+textarea[name="comment_text"] {
+	width: 100%;
+}
+
+
+input[type="submit"] {
+	margin: 0 auto;
+	display:block;
+
+  /*background-color: #def2c1;*/
+}
+
 /*{
   background-color: rgba(0,0,0,.25);
   color: white;
   font-family: 'Courier New';
 }*/
-
-
 
 .container{
 	width: 100%;
@@ -30,13 +37,14 @@ input[type="text"], textarea {
 	margin-top: 0em;
 	padding: 1em;
 	padding-left: 6%;
-/*	-moz-box-shadow: -19px 28px 27px #FFF;
-	-webkit-box-shadow: -19px 28px 27px #FFF;
-	box-shadow: -19px 28px 27px #FFF;*/
+/*	-moz-box-shadow: -19px 28px 27px #eee;
+	-webkit-box-shadow: -19px 28px 27px #eee;
+	box-shadow: -19px 28px 27px #eee;*/
 }
 .post:nth-child(even){
 	background-color: #128DFF;
 	margin-left: 24%;
+	margin-right: -10px;
 	padding-right: 30%;
 	border-top-left-radius: 22em 3em;
 	border-bottom-left-radius: 22em 3em;
@@ -45,6 +53,7 @@ input[type="text"], textarea {
 	padding-left: 30%;
 	padding-right: 8%;
 	margin-right: 22%;
+	margin-left: -10px;
 	background-color: #EEE;
 	border-top-right-radius: 22em 3em;
 	border-bottom-right-radius: 22em 3em;
