@@ -17,6 +17,8 @@ get '/' do
 	end
 
 	@posts = Post.all
+  @posts.sort_by! {|obj| obj.created_at}
+  @posts.reverse!
 	erb :index
 end
 
