@@ -21,7 +21,7 @@
 
 <% @posts.each do |post| %> 
 	<div class="post">
-		<h1>
+		<h1 class="title">
 			<%= post.title.upcase %> 
 			<% if @user %>
 				<% if @user.id == post.user_id %>
@@ -30,7 +30,7 @@
 		      </a>
 		    <% end %>
 	 		<% end %>
-		</h1>
+	 	</h1>
 			<p class="italics" >User: <%= post.user.username %></p>
 			<p class="italics" >Created at: <%= post.created_at.asctime %></p>
 		<div class= "body block_overflow">

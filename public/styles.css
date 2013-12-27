@@ -84,7 +84,7 @@ h1 {
 	border-bottom-right-radius: 22em 3em;
 }
 
-.body {
+.body, .title, .comments{
 	word-wrap: break-word;
   width: 100%;
 }
