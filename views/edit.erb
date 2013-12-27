@@ -4,7 +4,8 @@
     <label for="name">Title: </label><br>
     <input type="text" name="name" value="<%= @post.title %>"><br>
     <label for="name">Post: </label><br>
-    <textarea name="body" cols="62" rows="5" value="<%= @post.body %>"></textarea><br>
-    <input type="submit">
+    <textarea name="body" cols="62" rows="5"><%= @post.body %></textarea><br>
+    <input type="submit"> 
+    <a href="/"><button class="cancel">Cancel</button></a>
   </form>
 </div>
