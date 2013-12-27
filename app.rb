@@ -15,7 +15,6 @@ get '/' do
 	else 
 		@user = nil
 	end
-
 	@posts = Post.all
   @posts.sort_by! {|obj| obj.created_at}
   @posts.reverse!
@@ -40,12 +39,14 @@ get '/posts' do
   redirect '/'
 end
 
-
-
 post '/users' do 
-	user = User.create(:username => params[:username])
-	session[:username] = user.username
-	redirect '/'
+  unless user = User.find_by_username(params[:username])
+  	user = User.create(:username => params[:username], :email => params[:email])
+  	session[:username] = user.username
+  	redirect '/'
+  else
+    redirect '/users/sign_in'
+  end
 end
 
 get '/users/sign_in' do 
@@ -81,20 +82,13 @@ post '/posts/:id/comments' do
 	redirect '/'
 end 
 
-get '/posts/:id/like' do 
-	binding.pry
-	
-	user = User.find_by_username(session[:username])
-	post = Post.find(params[:id].to_i)
-
-	# like = Like.create
-	# like.user = user
-	# like.post = post
-	# like.save
-
-	user.faves << post
-
-	redirect '/'
-
+get '/posts/:id/like' do  
+  if user = User.find_by_username(session[:username])
+    post = Post.find(params[:id].to_i)
+    user.faves << post
+    redirect '/'
+  else
+    redirect '/users/sign_up'
+  end
 end
 

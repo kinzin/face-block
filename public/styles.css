@@ -43,7 +43,7 @@ input[type="submit"] {
 }
 .post:nth-child(even){
 	background-color: #128DFF;
-	margin-left: 24%;
+	margin-left: 22%;
 	margin-right: -10px;
 	padding-right: 30%;
 	border-top-left-radius: 22em 3em;
@@ -89,7 +89,8 @@ h1 {
 #top_header{
 	text-align: center;
 	background-color: #128DFF;
-	width:800px;
+	width: 56%;
+	min-width: 600px;
 	margin: 0 auto;
 	padding-bottom: 10px;
 	border-bottom-left-radius: 22em 3em;
