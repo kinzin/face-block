@@ -2,10 +2,29 @@
   <h1>Edit Post</h1>
   <form action="/posts/<%= @post.id %>" method="post">
     <label for="name">Title: </label><br>
-    <input type="text" name="name" value="<%= @post.title %>"><br>
+    <input type="text" name="title" value="<%= @post.title %>"><br>
     <label for="name">Post: </label><br>
     <textarea name="body" cols="62" rows="5"><%= @post.body %></textarea><br>
-    <input type="submit"> 
-    <a href="/"><button class="cancel">Cancel</button></a>
-  </form>
+
+    <table border="0">
+      <tr>
+        <td>
+          <input type="submit" value="Update">   
+          </form>
+        </td>
+        <td>
+          <form action="/" method="get">
+            <input type="submit" value="Cancel">
+          </form>
+        </td>
+        <td>
+          <form action="/posts/<%=@post.id%>/delete" method="post">
+            <input type="submit" value="Delete Post">
+          </form>
+        </td>
+      </tr>      
+    </table>
 </div>
+
+
+

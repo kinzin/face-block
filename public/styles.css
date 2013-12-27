@@ -5,7 +5,6 @@ body {
 input[type="text"], textarea {
 	font-family: 'Average Sans', sans-serif;
 	font-size: 1.2em;
-  /*background-color: #def2c1;*/
 }
 
 textarea[name="comment_text"] {
@@ -14,21 +13,11 @@ textarea[name="comment_text"] {
 
 
 input[type="submit"] {
-	margin: 0 auto;
-	display:block;
 
-  /*background-color: #def2c1;*/
 }
-
-/*{
-  background-color: rgba(0,0,0,.25);
-  color: white;
-  font-family: 'Courier New';
-}*/
 
 .container{
 	width: 100%;
-	/*background-color: blue;*/
 	margin: 0 auto;
 }
 
@@ -37,9 +26,6 @@ input[type="submit"] {
 	margin-top: 0em;
 	padding: 1em;
 	padding-left: 6%;
-/*	-moz-box-shadow: -19px 28px 27px #eee;
-	-webkit-box-shadow: -19px 28px 27px #eee;
-	box-shadow: -19px 28px 27px #eee;*/
 }
 .post:nth-child(even){
 	background-color: #128DFF;
@@ -62,13 +48,9 @@ input[type="submit"] {
 #signin {
 	text-align: right;
  	float:right;
- /*	display: block;
- 	margin: 0 auto;*/
-
 }
 
 h1 {
-	/*font-family: 'Average Sans', sans-serif;*/
 	padding-top: 38px;
 	margin-top: -10px;
 	text-decoration: none;
@@ -117,15 +99,6 @@ h1 {
 	text-align: right;
 }
 
-.comments p {
-	/*padding: 1em;*/
-}
-
-.comments p:nth-child(even){
-/*	border: 1px solid grey;
-	padding: 1em 0;*/
-}
-
 a {
 	text-decoration: none;
 	color: blue;
@@ -135,4 +108,15 @@ a:hover{
 	color: turquoise;
 }
 
+.center, table {
+	margin: 0 auto;
+}
+
+td{
+	width: 17%;
+}
+
+.indent {
+    margin-left: 5%;
+}
 
