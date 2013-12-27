@@ -55,6 +55,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 3.2.13)
+  coderay
   pg
   pry
   rake
