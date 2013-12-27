@@ -36,7 +36,18 @@
 		<div class= "body block_overflow">
 			<%= post.body %>
 		</div>
-		<a href="/posts/<%=post.id%>/like">LIKE</a>
+
+    <%#LIKE/UNLIKE BUTTON%>
+    <%if @user%>
+			<% if @user.likes.find_by_post_id(post.id) %>
+			  <a href="/posts/<%=post.id%>/unlike">UNLIKE</a>
+			<% else %>
+				<a href="/posts/<%=post.id%>/like">LIKE</a>
+			<% end %>
+		<% else %>
+			<a href="/users/sign_up">LIKE</a>
+		<% end %>
+
 		<div class="comments">
 			<ul style="list-style-type: none;">
 			<% post.comments.each do |comment| %> 

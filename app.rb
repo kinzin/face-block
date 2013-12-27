@@ -87,16 +87,21 @@ post '/posts/:id/comments' do
 	redirect '/'
 end 
 
-get '/posts/:id/like' do  
-  if user = User.find_by_username(session[:username])
-    post = Post.find(params[:id].to_i)
-    user.faves << post
-    redirect '/'
-  else
-    redirect '/users/sign_up'
-  end
+#LIKE POST
+get '/posts/:id/like' do 
+  user = User.find_by_username(session[:username])
+  post = Post.find(params[:id])
+  user.faves << post
+  redirect '/'
 end
 
+#UNLIKE POST
+get '/posts/:id/unlike' do  
+  user = User.find_by_username(session[:username])
+  like = user.likes.find_by_post_id(params[:id]) 
+  like.destroy
+  redirect '/'
+end
 
 #EDIT POST
 get '/posts/:id/edit' do 
