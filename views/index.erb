@@ -19,12 +19,13 @@
 	<div class="post">
 		<h1>
 			<%= post.title.upcase %> 
-
-			<% #if @user.id == post.user_id %>
-				<a href="/posts/<%= post.id %>/edit">
-	          &#9998;
-	      </a>
-	    <% #end %>
+			<% if @user %>
+				<% if @user.id == post.user_id %>
+					<a href="/posts/<%= post.id %>/edit">
+		          &#9998;
+		      </a>
+		    <% end %>
+	 		<% end %>
 		</h1>
 			<p class="italics" >User: <%= post.user.username %></p>
 			<p class="italics" >Created at: <%= post.created_at.asctime %></p>
