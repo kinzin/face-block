@@ -14,7 +14,7 @@
 	<input type="text" name="title" placeholder="Title" size="63"><br>
 	<input type="radio" name="code_type" value="none" checked>None
 	<input type="radio" name="code_type" value="ruby">Ruby
-	<input type="radio" name="code_type" value="html">HTML
+	<input type="radio" name="code_type" value="html">HTML<br>
 	<textarea name="body" placeholder="Post" cols="62" rows="5"></textarea><br>
 	<input type="submit">
 </form>
@@ -33,19 +33,17 @@
 		    <% end %>
 	 		<% end %>
 	 	</h1>
-		<p class="italics" >User: <%= post.user.username %></p>
-		<p class="italics" >Created at: <%= post.created_at.strftime("%H:%M %Y/%m/%d") %></p>
+		<p class="italics left" >User: <%= post.user.username %></p>
+		<p class="italics left">Created at: <%= post.created_at.strftime("%H:%M %Y/%m/%d") %></p>
 		
 
-
-
 		<div class= "body block_overflow">
-			<%= CodeRay.scan("#{post.body}", :"#{post.code_type}").div(:line_numbers => :table) %>
-			<%= post.body %>
+			<% if post.code_type != "none" %>
+				<%= CodeRay.scan("#{post.body}", :"#{post.code_type}").div(:line_numbers => :table) %>
+			<% else %>
+				<%= post.body %>
+			<% end %>
 		</div>
-
-
-
 
     <%#LIKE/UNLIKE BUTTON%>
     <%if @user%>
