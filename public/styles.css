@@ -50,6 +50,10 @@ input[type="submit"] {
  	float:right;
 }
 
+#signin a {
+	margin-left: 15px;
+}
+
 h1 {
 	padding-top: 38px;
 	margin-top: -10px;

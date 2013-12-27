@@ -69,7 +69,12 @@ end
 
 get '/users/:id' do 
 	@user = User.find(params[:id].to_i)
-	erb :show
+  @posts = @user.faves
+  @posts.uniq.sort_by!
+  @posts.sort_by! {|obj| obj.created_at}
+  @posts.reverse!
+  @welcome = false
+	erb :index
 end
 
 post '/posts/:id/comments' do 
