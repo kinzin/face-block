@@ -109,8 +109,11 @@ a:hover{
 }
 
 .center, table {
-	display: block;
 	margin: 0 auto;
+}
+
+.center {
+	display: block;
 }
 
 td{

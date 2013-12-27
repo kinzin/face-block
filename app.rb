@@ -118,6 +118,26 @@ post '/posts/:id/delete' do
 end
 
 
+#EDIT COMMENT
+get '/comments/:id/edit' do 
+  @comment = Comment.find(params[:id])
+  erb :edit_comment
+end
+
+post '/comments/:id' do
+  comment = Comment.find(params[:id])
+  comment.body = params[:body] || " "
+  comment.save
+  redirect '/'
+end
+
+#DELETE COMMENT
+post '/comments/:id/delete' do
+  comment = Comment.find(params[:id])
+  comment.destroy
+  redirect "/"
+end
+
 
 
 

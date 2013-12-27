@@ -1,0 +1,23 @@
+<div class="top_header">
+  <h1>Edit Comment</h1>
+  <form action="/comments/<%= @comment.id %>" method="post">
+    <textarea name="body" cols="62" rows="5"><%= @comment.body %></textarea><br>
+    <table border="0">
+      <tr>
+        <td>
+          <input type="submit" value="Update">   
+          </form>
+        </td>
+        <td>
+          <form action="/" method="get">
+            <input type="submit" value="Cancel">
+          </form>
+        </td>
+        <td>
+          <form action="/comments/<%=@comment.id%>/delete" method="post">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>      
+    </table>
+</div>
