@@ -61,9 +61,7 @@ h1 {
 }
 
 .post .body {
-/*	background-color: rgba(255,255,255,.8);
-	border-radius: 1em;
-	border: 1px solid;*/
+	text-align: left;
 }
 
 .post .comments {
@@ -126,6 +124,10 @@ a:hover{
 
 td{
 	width: 17%;
+}
+
+tr{
+	float-left;
 }
 
 .indent {
