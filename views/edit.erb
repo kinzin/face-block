@@ -1,0 +1,10 @@
+<div id="top_header">
+  <h1>Edit Post</h1>
+  <form action="/posts/<%= @post.id %>" method="post">
+    <label for="name">Title: </label><br>
+    <input type="text" name="name" value="<%= @post.title %>"><br>
+    <label for="name">Post: </label><br>
+    <textarea name="body" cols="62" rows="5" value="<%= @post.body %>"></textarea><br>
+    <input type="submit">
+  </form>
+</div>

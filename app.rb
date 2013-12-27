@@ -22,8 +22,8 @@ get '/' do
 end
 
 post '/posts' do
-  title = params[:title]
-  body = params[:body]
+  title = params[:title] || "untitled"
+  body = params[:body] || " "
   user = User.find_by_username(session[:username])
   post = Post.new(:title => title, :body => body)
   user.posts << post
@@ -91,4 +91,56 @@ get '/posts/:id/like' do
     redirect '/users/sign_up'
   end
 end
+
+
+#EDIT STAR
+get '/posts/:id/edit' do 
+  @post = Post.find(params[:id])
+  erb :edit
+end
+
+post '/posts/:id' do
+  # title = params[:title]
+  # body = params[:body]
+  # user = User.find_by_username(session[:username])
+  # post = Post.new(:title => title, :body => body)
+  # user.posts << post
+  # post.save
+  # redirect '/'
+
+  post = Post.find(params[:id])
+  post.title = params[:title] || "untitled"
+  post.body = params[:body] || " "
+  post.save
+  redirect '/'
+
+
+
+# star = Star.find(params[:id])
+#   star.name = params[:name].split(" ").map(&:capitalize).join(" ")
+#   star.save
+
+
+
+end
+
+
+# #EDIT STAR
+# get '/stars/:id/edit' do 
+#   @star = Star.find(params[:id])
+#   erb :"stars/edit"
+# end
+
+# post '/stars/:id' do 
+#   star = Star.find(params[:id])
+#   star.name = params[:name].split(" ").map(&:capitalize).join(" ")
+#   star.save
+#   redirect '/stars'
+# end
+
+
+
+
+
+
 

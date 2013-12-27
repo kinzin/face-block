@@ -71,6 +71,7 @@ h1 {
 	/*font-family: 'Average Sans', sans-serif;*/
 	padding-top: 38px;
 	margin-top: -10px;
+	text-decoration: none;
 }
 
 .post .body {
