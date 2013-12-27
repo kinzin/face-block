@@ -24,8 +24,9 @@ end
 post '/posts' do
   title = params[:title] || "untitled"
   body = params[:body] || " "
+  code_type = params[:code_type]
   user = User.find_by_username(session[:username])
-  post = Post.new(:title => title, :body => body)
+  post = Post.new(:title => title, :body => body, :code_type => code_type)
   user.posts << post
   post.save
   redirect '/'

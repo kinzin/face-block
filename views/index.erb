@@ -12,9 +12,10 @@
 <% if @user %>
 <form action="/posts" method="post">
 	<input type="text" name="title" placeholder="Title" size="63"><br>
+	<input type="radio" name="code_type" value="none" checked>None
+	<input type="radio" name="code_type" value="ruby">Ruby
+	<input type="radio" name="code_type" value="html">HTML
 	<textarea name="body" placeholder="Post" cols="62" rows="5"></textarea><br>
-
-	<!-- <radio button here> -->
 	<input type="submit">
 </form>
 <!-- <hr> -->
