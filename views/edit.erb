@@ -3,6 +3,14 @@
   <form action="/posts/<%= @post.id %>" method="post">
     <label for="name">Title: </label><br>
     <input type="text" name="title" value="<%= @post.title %>"><br>
+
+    <input type="radio" name="code_type" value="none" 
+        <%= "checked" if @post.code_type == "none" %> > None
+    <input type="radio" name="code_type" value="ruby" 
+        <%= "checked" if @post.code_type == "ruby" %> > Ruby
+    <input type="radio" name="code_type" value="html" 
+        <%= "checked" if @post.code_type == "html" %> > HTML <br>
+
     <label for="name">Post: </label><br>
     <textarea name="body" cols="62" rows="5"><%= @post.body %></textarea><br>
 

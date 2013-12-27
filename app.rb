@@ -114,6 +114,7 @@ post '/posts/:id' do
   post = Post.find(params[:id])
   post.title = params[:title] || "untitled"
   post.body = params[:body] || " "
+  post.code_type = params[:code_type]
   post.save
   redirect '/'
 end
