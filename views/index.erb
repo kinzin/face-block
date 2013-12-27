@@ -1,6 +1,6 @@
 <div class="top_header">
 <% if @user %>
-	<% if @welcome %>
+	<% unless @welcome == false %>
 		<h1>Welcome, <a href="/users/<%=@user.id%>"><%=@user.username%></a></h1>
 	<% else %>
 		<h1><%=@user.username%>'s Likes</h1>
