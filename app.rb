@@ -25,6 +25,9 @@ post '/posts' do
   title = params[:title] || "untitled"
   body = params[:body] || " "
   code_type = params[:code_type]
+  if code_type == "none"
+    body = remove_script(body)
+  end
   user = User.find_by_username(session[:username])
   post = Post.new(:title => title, :body => body, :code_type => code_type)
   user.posts << post
@@ -78,10 +81,13 @@ get '/users/:id' do
 	erb :index
 end
 
+#ADD A COMMENT
 post '/posts/:id/comments' do 
 	user = User.find_by_username(session[:username])
 	post = Post.find(params[:id].to_i)
-	comment = Comment.new(:body => params[:comment_text])
+  body = params[:comment_text]
+  body = remove_script(body)
+	comment = Comment.new(:body => body)
 	comment.save 
 	post.comments << comment
 	user.comments << comment
@@ -115,6 +121,9 @@ post '/posts/:id' do
   post.title = params[:title] || "untitled"
   post.body = params[:body] || " "
   post.code_type = params[:code_type]
+  if post.code_type == "none"
+    post.body = remove_script(post.body)
+  end 
   post.save
   redirect '/'
 end
@@ -138,7 +147,8 @@ end
 
 post '/comments/:id' do
   comment = Comment.find(params[:id])
-  comment.body = params[:body] || " "
+  body = params[:body] || " "
+  comment.body = remove_script(body)
   comment.save
   redirect '/'
 end
@@ -153,4 +163,7 @@ end
 
 
 
+def remove_script(text)
+  text.gsub("script", "") 
+end
 

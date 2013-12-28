@@ -76,15 +76,18 @@ td.line-numbers {
 
 pre{
 	/*background-color: white;*/
-	max-width: 500px;
+	margin:0;
+	padding:0;
+
+	/*max-width: 500px;*/
 	overflow:scroll;
 }
 
 table.CodeRay{
 	background-color: white;
 	margin-left:0;
-
-
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 .top_header{

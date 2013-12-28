@@ -18,8 +18,8 @@
 	<textarea name="body" placeholder="Post" cols="62" rows="5"></textarea><br>
 	<input type="submit">
 </form>
-<!-- <hr> -->
 <% end %>
+
 </div>
 <% @posts.each do |post| %> 
 	<div class="post">
@@ -60,7 +60,7 @@
 			<ul style="list-style-type: none;">
 			<% post.comments.each do |comment| %> 
 				<li><b><%=comment.user.username%>:</b> 
-					<div class="indent"><%= comment.body %>
+					<div class="indent"><%= comment.body %>  
 						<% if @user %>
 							<% if @user.id == comment.user_id %>
 								<a href="/comments/<%= comment.id %>/edit">
